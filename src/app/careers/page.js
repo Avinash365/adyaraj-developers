@@ -147,7 +147,7 @@ export default function Careers() {
       </section>
 
       {/* Call to Action */}
-      <section className="bg-[#ec6608] py-16 px-2">
+      <section className="bg-gradient-to-r from-yellow-900 to-orange-400 py-16 px-2">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-white text-3xl md:text-4xl font-extrabold mb-4">
             Ready to Build Your Future?

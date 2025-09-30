@@ -24,7 +24,7 @@ export default function ProjectStats() {
           <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (
               <div key={stat.id}>
-                <h3 className={`text-3xl font-bold ${stat.color}`}>{stat.value}</h3>
+                <h3 className={`text-xl  sm:text-3xl font-bold ${stat.color}`}>{stat.value}</h3>
                 <p className="text-gray-600 mt-1 text-sm">{stat.label}</p>
               </div>
             ))}

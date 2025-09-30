@@ -154,7 +154,7 @@ export default function ContactHero() {
       </section>
 
       {/* Call to Action */}
-      <section className="w-full py-16 flex flex-col items-center justify-center bg-orange-500 px-6 space-y-6">
+      <section className="w-full py-16 flex flex-col items-center justify-center bg-gradient-to-r from-yellow-900 to-orange-400 px-6 space-y-6">
         <div className="max-w-2xl text-center space-y-4">
           <h2 className="text-white text-3xl md:text-4xl font-bold">Ready to Start Your Project?</h2>
           <p className="text-white text-lg md:text-xl leading-relaxed">Contact us today for a free consultation and project estimate.</p>

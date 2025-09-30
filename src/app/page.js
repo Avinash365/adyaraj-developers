@@ -20,11 +20,11 @@ export default function Home() {
     <div>
       <Navbar/>
 
+      {/* Animate on mount instead of scroll */}
       <motion.div
         variants={fadeInUp}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        animate="visible"
       >
         <HeroSlider/>
       </motion.div>
@@ -32,8 +32,7 @@ export default function Home() {
       <motion.div
         variants={fadeInUp}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        animate="visible"
       >
         <AboutCompany/>
       </motion.div>
@@ -41,8 +40,7 @@ export default function Home() {
       <motion.div
         variants={fadeInUp}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        animate="visible"
       >
         <Projects/>
       </motion.div>
@@ -50,8 +48,7 @@ export default function Home() {
       <motion.div
         variants={fadeInUp}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        animate="visible"
       >
         <GovernmentExpertise/>
       </motion.div>
@@ -59,8 +56,7 @@ export default function Home() {
       <motion.div
         variants={fadeInUp}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        animate="visible"
       >
         <ProjectStats/>
       </motion.div>
@@ -68,8 +64,7 @@ export default function Home() {
       <motion.div
         variants={fadeInUp}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        animate="visible"
       >
         <LatestNews/>
       </motion.div>

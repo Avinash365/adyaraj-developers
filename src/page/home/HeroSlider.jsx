@@ -14,7 +14,7 @@ const slides = [
     description:
       "Trusted government contractor specializing in public infrastructure, healthcare facilities, educational institutions, and government buildings across Bihar and beyond",
     image:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80",
+      "/images/homePage/2.jpg",
   },
   {
     title: "Building India's",
@@ -22,7 +22,7 @@ const slides = [
     description:
       "Leading construction company specializing in government projects across Eastern India. We design, develop, and deliver world-class infrastructure with excellence and innovation.",
     image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=80",
+      "/images/homePage/construction-silhouette.jpg",
   },
   {
     title: "Roads & Bridges",
@@ -164,7 +164,7 @@ export default function HeroSlider() {
                 transition={{ delay: 0.9, duration: 1 }}
               >
                 <motion.a
-                  href="#projects"
+                  href="/projects"
                   className="bg-orange-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-orange-600 transition"
                   whileHover={{ scale: 1.1 }}
                 >
