@@ -1,15 +1,16 @@
 'use client';
 import { useState } from "react";
 import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
 
 export default function ContactHero() {
   const [details, setDetails] = useState("");
   const maxChars = 500;
   return (
     <>
-    <section>
+    
     <Navbar/>  
-    </section>
+    <main className="pt-[80px]"></main>
     <section
       className="w-full h-[295px] flex items-center justify-center relative"
       style={{
@@ -44,28 +45,28 @@ export default function ContactHero() {
               <div>
                 <label className="block text-sm font-semibold mb-1 text-[#22223B]">Full Name<span className="text-orange-600">*</span></label>
                 <input type="text" placeholder="Enter your full name" required
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-100" />
+                  className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-100 text-black" />
               </div>
               <div>
                 <label className="block text-sm font-semibold mb-1 text-[#22223B]">Email Address<span className="text-orange-600">*</span></label>
                 <input type="email" placeholder="Enter your email" required
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-100" />
+                  className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-100  text-black" />
               </div>
               <div>
                 <label className="block text-sm font-semibold mb-1 text-[#22223B]">Phone Number<span className="text-orange-600">*</span></label>
                 <input type="tel" placeholder="Enter your phone number"
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-100" />
+                  className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-100  text-black" />
               </div>
               <div>
                 <label className="block text-sm font-semibold mb-1 text-[#22223B]">Organization/Department</label>
                 <input type="text" placeholder="Government department or organization"
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-100" />
+                  className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-100  text-black" />
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-semibold mb-1 text-[#22223B]">Project Type</label>
-                <select className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-100">
+                <select className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-100  text-black">
                   <option>Select project type</option>
                   <option>Building</option>
                   <option>Road</option>
@@ -75,7 +76,7 @@ export default function ContactHero() {
               </div>
               <div>
                 <label className="block text-sm font-semibold mb-1 text-[#22223B]">Estimated Budget</label>
-                <select className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-100">
+                <select className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-100  text-black">
                   <option>Select budget range</option>
                   <option>Below 1 Cr</option>
                   <option>1-5 Cr</option>
@@ -86,7 +87,7 @@ export default function ContactHero() {
             </div>
             <div>
               <label className="block text-sm font-semibold mb-1 text-[#22223B]">Project Timeline</label>
-              <select className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-100">
+              <select className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-100  text-black">
                 <option>Select timeline</option>
                 <option>1-3 Months</option>
                 <option>3-6 Months</option>
@@ -98,7 +99,7 @@ export default function ContactHero() {
               <label className="block text-sm font-semibold mb-1 text-[#22223B]">Project Details</label>
               <textarea
                 placeholder="Please provide details about your project requirements, location, specifications, and any other relevant information..."
-                className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-100 min-h-[90px] resize-none"
+                className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-100 min-h-[90px] resize-none  text-black"
                 maxLength={maxChars}
                 value={details}
                 onChange={e => setDetails(e.target.value)}
@@ -181,7 +182,7 @@ export default function ContactHero() {
       }}
     >
       <div className="max-w-2xl mx-auto text-center">
-        <h2 className="text-white text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg">
+        <h2 className="text-black text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg">
           Ready to Start Your Project?
         </h2>
         <p className="text-white text-2xl mb-10">
@@ -205,6 +206,7 @@ export default function ContactHero() {
         </div>
       </div>
     </section>
+    <Footer/>
     </>
   );
 }

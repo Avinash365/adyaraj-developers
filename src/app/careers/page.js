@@ -1,12 +1,13 @@
 
 // pages/careers.js
 import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
 export default function careers() {
   return (
     <>
-    <section>
+    
     <Navbar/>  
-    </section>
+   <main className="pt-[80px]"></main>
     <section
       className="w-full h-[320px] flex items-center justify-center relative"
       style={{
@@ -182,7 +183,7 @@ export default function careers() {
         </div>
       </div>
     </section>
-
+      <Footer/>
     
 
 </>

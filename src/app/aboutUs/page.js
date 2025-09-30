@@ -1,11 +1,13 @@
 import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
 export default function AboutUs() {
   return (
     <>
       {/* Hero Section */}
-      <section>
+      
       <Navbar/>  
-      </section>
+      <main className="pt-[80px]"></main>
+
       <section
         className="relative h-[400px] flex items-center justify-center bg-cover bg-center"
         style={{
@@ -220,6 +222,8 @@ export default function AboutUs() {
 
       </div>
     </section>
+
+    <Footer/>
     </>
   );
 }

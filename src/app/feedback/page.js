@@ -1,6 +1,7 @@
 'use client';
 import { useState } from "react";
 import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
 
 export default function ClientFeedbackHero() {
   const [feedback, setFeedback] = useState("");
@@ -8,7 +9,8 @@ export default function ClientFeedbackHero() {
   return (
     <>
     
-    <Navbar/>  
+    <Navbar/>
+    <main className="pt-[80px]"> <main/>
     
     <section
       className="w-full h-[290px] flex items-center justify-center relative "
@@ -30,6 +32,7 @@ export default function ClientFeedbackHero() {
         </p>
       </div>
     </section>
+    </main>
 
     <section className="bg-[#fafbfc] py-8">
       <div className="max-w-2xl mx-auto text-center">
@@ -47,18 +50,19 @@ export default function ClientFeedbackHero() {
               </label>
               <input
                 type="text"
-                className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-200"
+                className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-200  text-black"
                 placeholder="Enter your full name"
                 required
               />
             </div>
+            
             <div>
               <label className="block text-sm font-semibold mb-2 text-[#22223b]">
                 Email Address <span className="text-orange-500">*</span>
               </label>
               <input
                 type="email"
-                className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-200"
+                className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-200  text-black"
                 placeholder="Enter your email"
                 required
               />
@@ -69,7 +73,7 @@ export default function ClientFeedbackHero() {
               </label>
               <input
                 type="tel"
-                className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-200"
+                className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-200  text-black"
                 placeholder="Enter your phone number"
               />
             </div>
@@ -79,7 +83,7 @@ export default function ClientFeedbackHero() {
               </label>
               <input
                 type="text"
-                className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-200"
+                className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-200  text-black"
                 placeholder="Which project are you providing feedback for?"
               />
             </div>
@@ -88,7 +92,7 @@ export default function ClientFeedbackHero() {
                 Overall Rating <span className="text-orange-500">*</span>
               </label>
               <select
-                className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-200"
+                className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-200  text-black"
                 required
               >
                 <option value="">Select rating</option>
@@ -103,7 +107,7 @@ export default function ClientFeedbackHero() {
                 Would you recommend us?
               </label>
               <select
-                className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-200"
+                className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-200  text-black"
               >
                 <option value="">Select option</option>
                 <option>Yes</option>
@@ -117,7 +121,7 @@ export default function ClientFeedbackHero() {
               Your Feedback <span className="text-orange-500">*</span>
             </label>
             <textarea
-              className="w-full border border-gray-300 rounded-md px-4 py-2 min-h-[100px] text-sm resize-none outline-none focus:ring-2 focus:ring-orange-200"
+              className="w-full border border-gray-300 rounded-md px-4 py-2 min-h-[100px] text-sm resize-none outline-none focus:ring-2 focus:ring-orange-200  text-black"
               placeholder="Please share your detailed feedback about our services, quality, timeline, and overall experience..."
               maxLength={maxChars}
               required
@@ -130,7 +134,7 @@ export default function ClientFeedbackHero() {
           <div className="mt-7">
             <button
               type="submit"
-              className="w-full bg-[#ec6608] text-white font-semibold rounded-md px-8 py-3 transition hover:bg-orange-700"
+              className="w-full bg-[#ec6608] text-white font-semibold rounded-md px-8 py-3 transition hover:bg-orange-700  text-black"
             >
               Submit Feedback
             </button>
@@ -153,7 +157,7 @@ export default function ClientFeedbackHero() {
         <div className="bg-[#f7f9fc] rounded-xl shadow-sm p-6 w-full max-w-sm mx-auto flex flex-col items-start">
           <div className="flex items-center mb-3">
             <img
-              src="/avatar1.jpg"
+              src="https://readdy.ai/api/search-image?query=Professional%20Indian%20doctor%20in%20white%20coat%2C%20medical%20superintendent%2C%20confident%20healthcare%20professional%2C%20hospital%20setting%2C%20professional%20portrait%20photography&width=80&height=80&seq=testimonial-doctor&orientation=squarish"
               alt="Dr. Rajesh Kumar"
               className="w-12 h-12 rounded-full border-2 border-gray-100 object-cover mr-3"
             />
@@ -176,7 +180,7 @@ export default function ClientFeedbackHero() {
         <div className="bg-[#f7f9fc] rounded-xl shadow-sm p-6 w-full max-w-sm mx-auto flex flex-col items-start">
           <div className="flex items-center mb-3">
             <img
-              src="/avatar2.jpg"
+              src="https://readdy.ai/api/search-image?query=Professional%20Indian%20female%20engineer%2C%20railway%20project%20manager%2C%20safety%20helmet%2C%20confident%20engineering%20professional%2C%20construction%20site%20background&width=80&height=80&seq=testimonial-engineer&orientation=squarish"
               alt="Eng. Priya Sharma"
               className="w-12 h-12 rounded-full border-2 border-gray-100 object-cover mr-3"
             />
@@ -199,7 +203,7 @@ export default function ClientFeedbackHero() {
         <div className="bg-[#f7f9fc] rounded-xl shadow-sm p-6 w-full max-w-sm mx-auto flex flex-col items-start">
           <div className="flex items-center mb-3">
             <img
-              src="/avatar3.jpg"
+              src="https://readdy.ai/api/search-image?query=Professional%20Indian%20government%20official%2C%20district%20collector%2C%20formal%20attire%2C%20confident%20administrative%20officer%2C%20office%20setting&width=80&height=80&seq=testimonial-collector&orientation=squarish"
               alt="Mr. Anil Singh"
               className="w-12 h-12 rounded-full border-2 border-gray-100 object-cover mr-3"
             />
@@ -220,6 +224,8 @@ export default function ClientFeedbackHero() {
         </div>
       </div>
     </section>
+    <Footer/>
+    {/* <main/> */}
     </>
   );
 }
