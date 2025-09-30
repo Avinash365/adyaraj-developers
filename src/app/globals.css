@@ -1,6 +1,6 @@
 @import "tailwindcss"; 
 
-
+@import "remixicon/fonts/remixicon.css";
 
 
 :root {
@@ -16,8 +16,9 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
+  :root { 
+
+    --background: #ededed;
     --foreground: #ededed;
   }
 }
@@ -26,4 +27,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} 
+.slick-dots li button:before {
+  display: none !important;
 }

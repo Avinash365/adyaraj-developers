@@ -1,12 +1,12 @@
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
-import HeroSlider from "@/page/home/HeroSlider";
+import HomePage from "@/page/careers/HomePage";
 
 export default function Home() {
   return (
     <div>
       <Navbar/>  
-      <HeroSlider/> 
+      <HomePage/> 
       <Footer/>
       {/* <HeroSlider /> */}
     </div>

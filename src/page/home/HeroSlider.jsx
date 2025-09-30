@@ -9,12 +9,20 @@ import { useState, useRef } from "react";
 
 const slides = [
   {
+    title: "Building Excellence",
+    subtitle: "Since 2005",
+    description:
+      "Trusted government contractor specializing in public infrastructure, healthcare facilities, educational institutions, and government buildings across Bihar and beyond",
+    image:
+      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80",
+  },
+  {
     title: "Building India's",
     subtitle: "Infrastructure",
     description:
       "Leading construction company specializing in government projects across Eastern India. We design, develop, and deliver world-class infrastructure with excellence and innovation.",
     image:
-      "https://readdy.ai/api/search-image?query=Bridge%20and%20flyover%20construction%2C%20highway%20infrastructure%20development%2C%20concrete%20bridge%20construction%2C%20government%20road%20project%2C%20heavy%20construction%20machinery%2C%20professional%20engineering%20work%2C%20modern%20infrastructure%20development%2C%20construction%20site%20photography&width=1920&height=1080&seq=hero-construction-4&orientation=landscape",
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=80",
   },
   {
     title: "Roads & Bridges",
@@ -22,7 +30,7 @@ const slides = [
     description:
       "Building critical transportation infrastructure connecting communities. We design, develop, and deliver world-class infrastructure with excellence and innovation.",
     image:
-      "https://readdy.ai/api/search-image?query=Bridge%20and%20flyover%20construction%2C%20highway%20infrastructure%20development%2C%20concrete%20bridge%20construction%2C%20government%20road%20project%2C%20heavy%20construction%20machinery%2C%20professional%20engineering%20work%2C%20modern%20infrastructure%20development%2C%20construction%20site%20photography&width=1920&height=1080&seq=hero-construction-4&orientation=landscape",
+      "https://images.unsplash.com/photo-1529429617124-95b109e86bb8?auto=format&fit=crop&w=1920&q=80",
   },
   {
     title: "Railway Infrastructure",
@@ -30,11 +38,11 @@ const slides = [
     description:
       "Specialized in station buildings, platforms, and railway development projects. We design, develop, and deliver world-class infrastructure with excellence and innovation.",
     image:
-      "https://readdy.ai/api/search-image?query=Bridge%20and%20flyover%20construction%2C%20highway%20infrastructure%20development%2C%20concrete%20bridge%20construction%2C%20government%20road%20project%2C%20heavy%20construction%20machinery%2C%20professional%20engineering%20work%2C%20modern%20infrastructure%20development%2C%20construction%20site%20photography&width=1920&height=1080&seq=hero-construction-4&orientation=landscape",
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1920&q=80",
   },
 ];
 
-// Arrow Component
+// Custom Arrow Component
 const Arrow = ({ onClick, direction }) => (
   <motion.div
     onClick={onClick}
@@ -45,20 +53,19 @@ const Arrow = ({ onClick, direction }) => (
     style={{ transform: "translateY(-50%)" }}
   >
     {direction === "left" ? (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-      </svg>
+      <i className="ri-arrow-left-s-line text-2xl text-white"></i>
     ) : (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-      </svg>
+      <i className="ri-arrow-right-s-line text-2xl text-white"></i>
     )}
   </motion.div>
 );
 
 export default function HeroSlider() {
-  const [blur, setBlur] = useState(false);
+  const [active, setActive] = useState(0);
   const sliderRef = useRef(null);
+
+  // autoplay reduced to 3s
+  const autoplaySpeed = 3000;
 
   const settings = {
     dots: true,
@@ -67,45 +74,70 @@ export default function HeroSlider() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 6000,
+    autoplaySpeed,
     arrows: true,
     pauseOnHover: true,
     fade: false,
-    beforeChange: () => setBlur(true),
-    afterChange: () => setBlur(false),
+    beforeChange: (_, next) => setActive(next),
     nextArrow: <Arrow direction="right" />,
     prevArrow: <Arrow direction="left" />,
-    appendDots: dots => (
-      <div className="absolute bottom-8 w-full flex justify-center items-center z-30">
+    appendDots: (dots) => (
+      <div className="absolute bottom-6 w-full flex justify-center items-center z-30">
         <ul className="flex gap-3">{dots}</ul>
       </div>
     ),
-    customPaging: i => (
-      <div className="w-4 h-4 rounded-full bg-white/50 hover:bg-orange-500 cursor-pointer transition" />
+    customPaging: (i) => (
+      <div
+        className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+          active === i ? "border-orange-500" : "border-white"
+        }`}
+      >
+        {active === i && (
+          <motion.div
+            key={`dot-${active}`}
+            className="w-2.5 h-2.5 rounded-full bg-orange-500"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: autoplaySpeed / 1000, ease: "linear" }}
+            style={{ transformOrigin: "left center" }}
+          />
+        )}
+      </div>
     ),
   };
+
+  // Different animations per slide index
+  const animations = [
+    { initial: { scale: 1.2 }, animate: { scale: 1 } },
+    { initial: { x: "10%" }, animate: { x: "0%" } },
+    { initial: { x: "-10%" }, animate: { x: "0%" } },
+    { initial: { opacity: 0 }, animate: { opacity: 1 } },
+  ];
 
   return (
     <div className="relative h-screen w-full overflow-hidden">
       <Slider ref={sliderRef} {...settings}>
         {slides.map((slide, index) => (
           <div key={index} className="relative h-screen w-full overflow-hidden">
-            {/* Background */}
+            {/* Background with motion */}
             <motion.div
-              className={`absolute inset-0 bg-center bg-cover ${blur ? "filter blur-sm scale-105" : "scale-100"} transition-transform duration-700`}
-              style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${slide.image})` }}
-              initial={{ scale: 1.05, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1.5 }}
+              key={active}
+              className="absolute inset-0 bg-center bg-cover"
+              style={{
+                backgroundImage: `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(${slide.image})`,
+              }}
+              initial={animations[index % animations.length].initial}
+              animate={animations[index % animations.length].animate}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
             />
 
             {/* Slide Content */}
             <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 md:px-16">
               <motion.h1
                 className="text-4xl md:text-6xl font-bold text-white"
-                initial={{ y: -50, opacity: 0, scale: 0.9 }}
-                animate={{ y: 0, opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3, duration: 1, type: "spring", stiffness: 50 }}
+                initial={{ y: -50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.3, duration: 1 }}
               >
                 {slide.title}{" "}
                 <motion.span

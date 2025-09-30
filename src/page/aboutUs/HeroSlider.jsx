@@ -1,150 +1,63 @@
-"use client";
+// components/HeroSection.js
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Link from 'next/link';
 
-import Slider from "react-slick";
-import { motion } from "framer-motion";
-import { useState, useRef } from "react";
+const HeroSlider = () => (
+  <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <div 
+      className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+      style={{
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://readdy.ai/api/search-image?query=Bridge%20and%20flyover%20construction%2C%20highway%20infrastructure%20development%2C%20concrete%20bridge%20construction%2C%20government%20road%20project%2C%20heavy%20construction%20machinery%2C%20professional%20engineering%20work%2C%20modern%20infrastructure%20development%2C%20construction%20site%20photography&amp;width=1920&amp;height=1080&amp;seq=hero-construction-4&amp;orientation=landscape')`,
+        opacity: 1, transform: 'scale(0.99)'
+      }}
+    />
+    {/* Decorative gradient elements */}
+    <div className="absolute top-14 left-14 w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20" />
+    <div className="absolute top-13 right-13 w-12 h-12 bg-orange-500/20 backdrop-blur-sm rounded-xl border border-orange-300/30" />
+    <div className="absolute bottom-13 left-13 w-20 h-20 bg-blue-500/15 backdrop-blur-sm rounded-3xl border border-blue-300/25" />
 
-const slides = [
-  {
-    title: "Building India's",
-    subtitle: "Infrastructure",
-    description:
-      "Leading construction company specializing in government projects across Eastern India. We design, develop, and deliver world-class infrastructure with excellence and innovation.",
-    image:
-      "https://readdy.ai/api/search-image?query=Bridge%20and%20flyover%20construction%2C%20highway%20infrastructure%20development%2C%20concrete%20bridge%20construction%2C%20government%20road%20project%2C%20heavy%20construction%20machinery%2C%20professional%20engineering%20work%2C%20modern%20infrastructure%20development%2C%20construction%20site%20photography&width=1920&height=1080&seq=hero-construction-4&orientation=landscape",
-  },
-  {
-    title: "Roads & Bridges",
-    subtitle: "Construction",
-    description:
-      "Building critical transportation infrastructure connecting communities. We design, develop, and deliver world-class infrastructure with excellence and innovation.",
-    image:
-      "https://readdy.ai/api/search-image?query=Bridge%20and%20flyover%20construction%2C%20highway%20infrastructure%20development%2C%20concrete%20bridge%20construction%2C%20government%20road%20project%2C%20heavy%20construction%20machinery%2C%20professional%20engineering%20work%2C%20modern%20infrastructure%20development%2C%20construction%20site%20photography&width=1920&height=1080&seq=hero-construction-4&orientation=landscape",
-  },
-  {
-    title: "Railway Infrastructure",
-    subtitle: "Excellence",
-    description:
-      "Specialized in station buildings, platforms, and railway development projects. We design, develop, and deliver world-class infrastructure with excellence and innovation.",
-    image:
-      "https://readdy.ai/api/search-image?query=Bridge%20and%20flyover%20construction%2C%20highway%20infrastructure%20development%2C%20concrete%20bridge%20construction%2C%20government%20road%20project%2C%20heavy%20construction%20machinery%2C%20professional%20engineering%20work%2C%20modern%20infrastructure%20development%2C%20construction%20site%20photography&width=1920&height=1080&seq=hero-construction-4&orientation=landscape",
-  },
-];
-
-// Arrow Component
-const Arrow = ({ onClick, direction }) => (
-  <motion.div
-    onClick={onClick}
-    whileHover={{ scale: 1.2 }}
-    className={`absolute top-1/2 z-20 w-12 h-12 hidden md:flex items-center justify-center rounded-full backdrop-blur-md bg-white/20 cursor-pointer transition hover:bg-white/30 ${
-      direction === "left" ? "left-4" : "right-4"
-    }`}
-    style={{ transform: "translateY(-50%)" }}
-  >
-    {direction === "left" ? (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-      </svg>
-    ) : (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-      </svg>
-    )}
-  </motion.div>
+    <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center text-white w-full relative z-10" style={{ perspective: '1000px', rotate: '5deg', transformStyle: 'preserve-3d', opacity: 1 }}>
+      <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight" style={{ textShadow: 'rgba(0,0,0,0.5) 0px 10px 30px' }}>
+        <span className="block" style={{ opacity: 1, transform: 'translateY(-34px) rotateX(61deg)' }}>
+          Roads & Bridges
+        </span>
+        <span className="text-orange-400 block" style={{ opacity: 1, transform: 'translateY(-19px) rotateX(33deg)' }}>
+          Construction
+        </span>
+      </h1>
+      <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed" style={{ textShadow: 'rgba(0,0,0,0.3) 0px 5px 15px' }}>
+        <span style={{ opacity: 1 }}>
+          Building critical transportation infrastructure connecting communities. We design, develop, and deliver world-class infrastructure with excellence and innovation.
+        </span>
+      </p>
+      <div className="flex flex-col sm:flex-row gap-6 justify-center" style={{ opacity: 1 }}>
+        <Link href="/projects" passHref legacyBehavior>
+          <a className="bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white px-10 py-5 rounded-xl text-lg font-semibold transition-all duration-300 cursor-pointer whitespace-nowrap shadow-2xl hover:shadow-orange-500/25 border border-orange-500/30 backdrop-blur-sm">
+            View Our Projects
+          </a>
+        </Link>
+        <Link href="/contact" passHref legacyBehavior>
+          <a className="border-2 border-white/50 text-white hover:bg-white/10 hover:text-white px-10 py-5 rounded-xl text-lg font-semibold transition-all duration-300 cursor-pointer whitespace-nowrap shadow-2xl hover:shadow-white/25 backdrop-blur-sm">
+            Get Quote
+          </a>
+        </Link>
+      </div>
+    </div>
+    {/* Decorative buttons at bottom left/right, can be connected for carousel or actions as needed */}
+    <div className="absolute bottom-8 left-12 transform -translate-x-12 flex space-x-3 z-20">
+      <button className="w-4 h-4 rounded-full transition-all duration-300 cursor-pointer bg-orange-500 scale-125" tabIndex="0" style={{ boxShadow: 'rgba(255,165,0,0.6) 0px 0px 20px' }} />
+      <button className="w-4 h-4 rounded-full transition-all duration-300 cursor-pointer bg-white/50 hover:bg-white/75" tabIndex="0" />
+      <button className="w-4 h-4 rounded-full transition-all duration-300 cursor-pointer bg-white/50 hover:bg-white/75" tabIndex="0" />
+      <button className="w-4 h-4 rounded-full transition-all duration-300 cursor-pointer bg-white/50 hover:bg-white/75" tabIndex="0" />
+    </div>
+    {/* Carousel navigation arrows (if needed) */}
+    <button className="absolute left-8 top-12 transform -translate-y-12 w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-all duration-300 cursor-pointer z-20 backdrop-blur-sm border border-white/30" tabIndex="0">
+      <i className="ri-arrow-left-line text-xl" />
+    </button>
+    <button className="absolute right-8 top-12 transform -translate-y-12 w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-all duration-300 cursor-pointer z-20 backdrop-blur-sm border border-white/30" tabIndex="0">
+      <i className="ri-arrow-right-line text-xl" />
+    </button>
+  </section>
 );
 
-export default function HeroSlider() {
-  const [blur, setBlur] = useState(false);
-  const sliderRef = useRef(null);
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 6000,
-    arrows: true,
-    pauseOnHover: true,
-    fade: false,
-    beforeChange: () => setBlur(true),
-    afterChange: () => setBlur(false),
-    nextArrow: <Arrow direction="right" />,
-    prevArrow: <Arrow direction="left" />,
-    appendDots: dots => (
-      <div className="absolute bottom-8 w-full flex justify-center items-center z-30">
-        <ul className="flex gap-3">{dots}</ul>
-      </div>
-    ),
-    customPaging: i => (
-      <div className="w-4 h-4 rounded-full bg-white/50 hover:bg-orange-500 cursor-pointer transition" />
-    ),
-  };
-
-  return (
-    <div className="relative h-screen w-full overflow-hidden">
-      <Slider ref={sliderRef} {...settings}>
-        {slides.map((slide, index) => (
-          <div key={index} className="relative h-screen w-full overflow-hidden">
-            {/* Background */}
-            <motion.div
-              className={`absolute inset-0 bg-center bg-cover ${blur ? "filter blur-sm scale-105" : "scale-100"} transition-transform duration-700`}
-              style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${slide.image})` }}
-              initial={{ scale: 1.05, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1.5 }}
-            />
-
-            {/* Slide Content */}
-            <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 md:px-16">
-              <motion.h1
-                className="text-4xl md:text-6xl font-bold text-white"
-                initial={{ y: -50, opacity: 0, scale: 0.9 }}
-                animate={{ y: 0, opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3, duration: 1, type: "spring", stiffness: 50 }}
-              >
-                {slide.title}{" "}
-                <motion.span
-                  className="text-orange-500"
-                  initial={{ x: -20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 0.5, duration: 0.8 }}
-                >
-                  {slide.subtitle}
-                </motion.span>
-              </motion.h1>
-
-              <motion.p
-                className="mt-4 text-white text-sm md:text-lg max-w-2xl"
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.6, duration: 1 }}
-              >
-                {slide.description}
-              </motion.p>
-
-              <motion.div
-                className="mt-6 flex gap-4"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.9, duration: 1 }}
-              >
-                <motion.a
-                  href="#projects"
-                  className="bg-orange-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-orange-600 transition"
-                  whileHover={{ scale: 1.1 }}
-                >
-                  View Our Projects
-                </motion.a>
-              </motion.div>
-            </div>
-          </div>
-        ))}
-      </Slider>
-    </div>
-  );
-}
+export default HeroSlider;

@@ -4,7 +4,7 @@ import "remixicon/fonts/remixicon.css";
 const companyInfo = {
   name: "Adyaraj Developers",
   description:
-    "A leading construction company specializing in government projects across Eastern India. We design, develop, and deliver quality infrastructure projects with excellence and innovation.",
+    "A trusted construction partner specializing in government projects across Eastern India. We deliver quality public infrastructure with innovation and integrity.",
   tagline: "DESIGN • DEVELOP • DELIVER",
 };
 
@@ -17,7 +17,11 @@ const quickLinks = [
 ];
 
 const contactInfo = {
-  address: ["202, Vishnu Palace", "East Boring Canal Road", "Patna, Bihar - 800001"],
+  address: [
+    "202, Vishnu Palace",
+    "East Boring Canal Road",
+    "Patna, Bihar - 800001",
+  ],
   phone: "+91 9334458593",
   email: "webmail@adyaraj.com",
   icons: {
@@ -29,24 +33,29 @@ const contactInfo = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0d1421] text-white">
-      <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-[#0d1421] text-gray-300 text-sm">
+      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Company Info */}
         <div>
-          <h2 className="text-2xl font-bold text-orange-500 mb-3">
+          <h2 className="text-2xl font-bold text-orange-500 mb-4">
             {companyInfo.name}
           </h2>
-          <p className="text-gray-300 leading-relaxed">{companyInfo.description}</p>
-          <p className="mt-3 font-semibold text-orange-400">{companyInfo.tagline}</p>
+          <p className="leading-relaxed">{companyInfo.description}</p>
+          <p className="mt-4 text-orange-400 font-semibold tracking-wide uppercase text-xs">
+            {companyInfo.tagline}
+          </p>
         </div>
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
+          <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
           <ul className="space-y-2">
             {quickLinks.map((link) => (
               <li key={link.name}>
-                <a href={link.href} className="hover:text-orange-400">
+                <a
+                  href={link.href}
+                  className="hover:text-orange-400 transition-colors duration-300"
+                >
                   {link.name}
                 </a>
               </li>
@@ -56,13 +65,13 @@ export default function Footer() {
 
         {/* Contact Info */}
         <div>
-          <h3 className="text-lg font-semibold mb-3">Contact Info</h3>
-          <ul className="space-y-3">
-            <li className="flex items-start space-x-3">
+          <h3 className="text-lg font-semibold text-white mb-4">Contact Info</h3>
+          <ul className="space-y-4">
+            <li className="flex items-start gap-3">
               <i
-                className={`${contactInfo.icons.address} w-8 h-8 flex items-center justify-center text-orange-400 text-2xl`}
+                className={`${contactInfo.icons.address} text-orange-400 text-xl`}
               ></i>
-              <span>
+              <span className="leading-relaxed">
                 {contactInfo.address.map((line, index) => (
                   <span key={index}>
                     {line}
@@ -72,20 +81,22 @@ export default function Footer() {
               </span>
             </li>
 
-            <li className="flex items-center space-x-3">
-              <i
-                className={`${contactInfo.icons.phone} w-8 h-8 flex items-center justify-center text-orange-400 text-2xl`}
-              ></i>
-              <a href={`tel:${contactInfo.phone}`} className="hover:text-orange-400">
+            <li className="flex items-center gap-3">
+              <i className={`${contactInfo.icons.phone} text-orange-400 text-xl`}></i>
+              <a
+                href={`tel:${contactInfo.phone}`}
+                className="hover:text-orange-400 transition-colors duration-300"
+              >
                 {contactInfo.phone}
               </a>
             </li>
 
-            <li className="flex items-center space-x-3">
-              <i
-                className={`${contactInfo.icons.email} w-8 h-8 flex items-center justify-center text-orange-400 text-2xl`}
-              ></i>
-              <a href={`mailto:${contactInfo.email}`} className="hover:text-orange-400">
+            <li className="flex items-center gap-3">
+              <i className={`${contactInfo.icons.email} text-orange-400 text-xl`}></i>
+              <a
+                href={`mailto:${contactInfo.email}`}
+                className="hover:text-orange-400 transition-colors duration-300"
+              >
                 {contactInfo.email}
               </a>
             </li>
@@ -94,8 +105,9 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-700 text-center text-gray-400 text-sm py-4">
-        © {new Date().getFullYear()} {companyInfo.name} Pvt. Ltd. All rights reserved.
+      <div className="border-t border-gray-700 text-center text-gray-500 text-xs py-4">
+        © {new Date().getFullYear()} {companyInfo.name} Pvt. Ltd. | All Rights
+        Reserved
       </div>
     </footer>
   );
