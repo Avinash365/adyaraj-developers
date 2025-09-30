@@ -37,7 +37,6 @@ export default function ClientFeedbackHero() {
         {/* Feedback Form */}
         <section className="bg-[#fafbfc] py-14 px-4">
           <div className="text-center mb-12">
-           
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-4">
               Share Your <span className="text-orange-600">Experience</span>
             </h2>
@@ -192,8 +191,9 @@ export default function ClientFeedbackHero() {
                   role: "District Collector",
                   project: "Residential School Complex",
                   image:
-                    "https://readdy.ai/api/search-image?query=Professional%20Indian%20government%20official%2C%20district%20collector%2C%20formal%20attire%2C%20confident%20administrative%20officer%2C%20office%20setting&width=80&height=80&seq=testimonial-collector&orientation=squarish",                  
-                    feedback:"Adyaraj Developers delivered a world-class educational facility. Highly recommended for government projects.",
+                    "https://readdy.ai/api/search-image?query=Professional%20Indian%20government%20official%2C%20district%20collector%2C%20formal%20attire%2C%20confident%20administrative%20officer%2C%20office%20setting&width=80&height=80&seq=testimonial-collector&orientation=squarish",
+                  feedback:
+                    "Adyaraj Developers delivered a world-class educational facility. Highly recommended for government projects.",
                 },
               ];
 
@@ -217,12 +217,12 @@ export default function ClientFeedbackHero() {
                     </div>
                   </div>
                   <div className="flex items-center gap-1 mb-2">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <span key={i} className="text-[#ffcc32] text-sm">★</span>
+                    {Array.from({ length: 5 }).map((_, starIdx) => (
+                      <span key={starIdx} className="text-[#ffcc32] text-sm">★</span>
                     ))}
                   </div>
                   <p className="text-sm text-gray-700 italic font-medium">
-                    "{t.feedback}"
+                    &quot;{t.feedback}&quot;
                   </p>
                 </div>
               );

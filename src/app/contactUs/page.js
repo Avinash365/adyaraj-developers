@@ -28,7 +28,7 @@ export default function ContactHero() {
             Contact Us
           </h1>
           <p className="text-gray-100 text-lg md:text-xl leading-relaxed drop-shadow-lg">
-            Let's Discuss Your Next Project
+            Let&apos;s Discuss Your Next Project
           </p>
         </div>
       </section>
@@ -36,7 +36,7 @@ export default function ContactHero() {
       {/* Contact Form + Info */}
       <section className="bg-white py-16 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-          
+
           {/* Left: Form */}
           <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
@@ -123,7 +123,7 @@ export default function ContactHero() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Get in Touch</h2>
             <p className="text-gray-600 leading-relaxed">Ready to start your government construction project? Contact us today for consultation and a detailed project proposal.</p>
 
-            {[ 
+            {[
               { icon: "📍", title: "Office Address", text: "202, Vishnu Palace\nEast Boring Canal Road\nPatna, Bihar - 800001" },
               { icon: "📞", title: "Phone Numbers", text: "+91 9334485893\n0612-2520018\n0612-6604972" },
               { icon: "✉️", title: "Email Addresses", text: "webmail@adyaraj.com\nadyaraj.developers.p@gmail.com" },

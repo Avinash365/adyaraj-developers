@@ -1,5 +1,3 @@
-// pages/careers.js
-
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 
@@ -26,7 +24,7 @@ export default function Careers() {
             Join Our Team
           </h1>
           <p className="text-white text-lg sm:text-xl font-medium drop-shadow">
-            Build Your Career with Eastern India's Leading Construction Company
+            Build Your Career with Eastern India&apos;s Leading Construction Company
           </p>
         </div>
       </section>
@@ -41,7 +39,7 @@ export default function Careers() {
             Why Choose <span className="text-orange-600">Adyaraj Developers?</span>
           </h2>
           <p className="text-gray-600 mt-3 max-w-2xl mx-auto text-base md:text-lg">
-            Join a company that values innovation, excellence, and professional growth. Be part of building India's infrastructure future.
+            Join a company that values innovation, excellence, and professional growth. Be part of building India&apos;s infrastructure future.
           </p>
         </div>
 
@@ -88,7 +86,7 @@ export default function Careers() {
               <h3 className="font-semibold text-lg text-[#22223B] mb-2">
                 {item.title}
               </h3>
-              <p className="text-gray-600 text-[1.03rem]">{item.desc}</p>
+              <p className="text-gray-600 text-base">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -101,7 +99,7 @@ export default function Careers() {
             Hiring Process
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 mt-4">
-            Simple & Transparent <span className="text-orange-600">Application</span> Steps
+            Simple &amp; Transparent <span className="text-orange-600">Application</span> Steps
           </h2>
           <p className="text-gray-600 mt-3 max-w-2xl mx-auto text-base md:text-lg">
             We believe in a fair and efficient hiring process to connect the right talent with the right opportunity.
@@ -153,8 +151,9 @@ export default function Careers() {
             Ready to Build Your Future?
           </h2>
           <p className="text-white text-base md:text-lg mb-7">
-            Join our team and be part of India's infrastructure development.<br />
-            Send us your resume and let's discuss your career opportunities.
+            Join our team and be part of India&apos;s infrastructure development.
+            <br />
+            Send us your resume and let&apos;s discuss your career opportunities.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mt-2">
             <button className="bg-white text-[#ec6608] font-medium rounded-md px-7 py-3 shadow hover:bg-orange-50 transition border border-white">
