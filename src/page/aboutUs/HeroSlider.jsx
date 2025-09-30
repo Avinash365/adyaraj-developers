@@ -1,6 +1,8 @@
 // components/HeroSection.js
 
-import Link from 'next/link';
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const HeroSlider = () => (
   <section className="relative h-screen flex items-center justify-center overflow-hidden">
