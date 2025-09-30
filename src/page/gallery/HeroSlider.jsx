@@ -8,7 +8,7 @@ export default function GalleryHero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img 
-          src="/images/gallery/1.jpg"
+          src="/images/gallery/power-plant-construction.jpg"
           alt="Construction Site Gallery"
           className="w-full h-full object-cover object-top"
         />

@@ -1,5 +1,8 @@
 import Navbar from "@/components/navbar/Navbar";
-import Footer from "@/components/footer/Footer";
+import Footer from "@/components/footer/Footer"; 
+import Timeline  from "@/components/TimeLine";  
+
+
 export default function AboutUs() {
   return (
     <>
@@ -222,7 +225,7 @@ export default function AboutUs() {
 
       </div>
     </section>
-
+    <Timeline/>
     <Footer/>
     </>
   );
