@@ -29,16 +29,14 @@ const slides = [
     subtitle: "Construction",
     description:
       "Building critical transportation infrastructure connecting communities. We design, develop, and deliver world-class infrastructure with excellence and innovation.",
-    image:
-      "https://images.unsplash.com/photo-1529429617124-95b109e86bb8?auto=format&fit=crop&w=1920&q=80",
+    image:"/images/homePage/road_Bridge.jpg",
   },
   {
     title: "Railway Infrastructure",
     subtitle: "Excellence",
     description:
       "Specialized in station buildings, platforms, and railway development projects. We design, develop, and deliver world-class infrastructure with excellence and innovation.",
-    image:
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1920&q=80",
+    image:"/images/homePage/railway-sunrise.jpg",
   },
 ];
 

@@ -74,7 +74,7 @@ export default function AboutUs() {
             <div className="bg-orange-100 p-3 rounded-lg text-orange-500 text-xl">
               🎯
             </div>
-            <h2 className="text-xl font-bold">Our Vision</h2>
+            <h2 className="text-xl font-bold text-black">Our Vision</h2>
           </div>
           <ul className="space-y-3 text-gray-700">
             <li className="flex gap-2">
@@ -98,7 +98,7 @@ export default function AboutUs() {
             <div className="bg-orange-100 p-3 rounded-lg text-orange-500 text-xl">
               🚀
             </div>
-            <h2 className="text-xl font-bold">Our Mission</h2>
+            <h2 className="text-xl font-bold  text-black">Our Mission</h2>
           </div>
           <ul className="space-y-3 text-gray-700">
             <li className="flex gap-2">
