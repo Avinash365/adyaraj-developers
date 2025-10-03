@@ -13,30 +13,28 @@ const slides = [
     subtitle: "Since 2005",
     description:
       "Trusted government contractor specializing in public infrastructure, healthcare facilities, educational institutions, and government buildings across Bihar and beyond",
-    image:
-      "/images/homePage/2.jpg",
+    image: "/images/homePage/2.jpg",
   },
   {
     title: "Building India's",
     subtitle: "Infrastructure",
     description:
       "Leading construction company specializing in government projects across Eastern India. We design, develop, and deliver world-class infrastructure with excellence and innovation.",
-    image:
-      "/images/homePage/construction-silhouette.jpg",
+    image: "/images/homePage/construction-silhouette.jpg",
   },
   {
     title: "Roads & Bridges",
     subtitle: "Construction",
     description:
       "Building critical transportation infrastructure connecting communities. We design, develop, and deliver world-class infrastructure with excellence and innovation.",
-    image:"/images/homePage/road_Bridge.jpg",
+    image: "/images/homePage/road_Bridge.jpg",
   },
   {
     title: "Railway Infrastructure",
     subtitle: "Excellence",
     description:
       "Specialized in station buildings, platforms, and railway development projects. We design, develop, and deliver world-class infrastructure with excellence and innovation.",
-    image:"/images/homePage/railway-sunrise.jpg",
+    image: "/images/homePage/railway-sunrise.jpg",
   },
 ];
 
@@ -104,28 +102,21 @@ export default function HeroSlider() {
     ),
   };
 
-  // Different animations per slide index
-  const animations = [
-    { initial: { scale: 1.2 }, animate: { scale: 1 } },
-    { initial: { x: "10%" }, animate: { x: "0%" } },
-    { initial: { x: "-10%" }, animate: { x: "0%" } },
-    { initial: { opacity: 0 }, animate: { opacity: 1 } },
-  ];
-
   return (
     <div className="relative h-screen w-full overflow-hidden">
       <Slider ref={sliderRef} {...settings}>
         {slides.map((slide, index) => (
           <div key={index} className="relative h-screen w-full overflow-hidden">
-            {/* Background with motion */}
+            {/* Background with Zoom Animation */}
             <motion.div
               key={active}
               className="absolute inset-0 bg-center bg-cover"
               style={{
                 backgroundImage: `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(${slide.image})`,
               }}
-              initial={animations[index % animations.length].initial}
-              animate={animations[index % animations.length].animate}
+              initial={{ scale: 1.1, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 1.2, opacity: 0 }}
               transition={{ duration: 1.2, ease: "easeInOut" }}
             />
 

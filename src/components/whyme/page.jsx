@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const items = [
@@ -34,15 +34,26 @@ export default function FloatingWhyChoose() {
       dragConstraints={{ left: -100, right: 100, top: -100, bottom: 100 }}
       dragElastic={0.2}
     >
-      {/* Toggle Button */}
-      <button
+      {/* 🔴 Blinking / Pulsing Button */}
+      <motion.button
         onClick={() => setOpen(!open)}
         className="bg-orange-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-orange-700 transition"
+        animate={{
+          scale: [1, 1.15, 1],
+          opacity: [1, 0.6, 1],
+        }}
+        transition={{
+          duration: 1.2,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
       >
-        <i className={`ri-${open ? "close-line" : "question-line"} text-2xl`}></i>
-      </button>
+        <i
+          className={`ri-${open ? "close-line" : "question-line"} text-2xl`}
+        ></i>
+      </motion.button>
 
-      {/* Floating Card with Animation */}
+      {/* 📌 Floating Card with Animation */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -52,7 +63,12 @@ export default function FloatingWhyChoose() {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="mt-3 w-72 sm:w-80 bg-white/60 backdrop-blur-xl rounded-2xl shadow-xl p-6 border border-white/30 cursor-grab active:cursor-grabbing"
             drag
-            dragConstraints={{ left: -200, right: 200, top: -200, bottom: 200 }}
+            dragConstraints={{
+              left: -200,
+              right: 200,
+              top: -200,
+              bottom: -200,
+            }}
             dragElastic={0.3}
           >
             <h3 className="text-lg font-bold text-gray-800 mb-4">
