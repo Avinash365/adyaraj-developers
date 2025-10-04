@@ -29,7 +29,7 @@ export default function Navbar() {
         <i className="ri-shield-check-line"></i> CLASS A LICENSED
       </span>
       <span className="flex items-center gap-1 text-[6px] md:text-[12px]">
-        <i className="ri-file-list-3-line"></i> GeM REGISTERED
+        <i className="ri-file-list-3-line"></i> ISO 9001:2015 & 45001:2018 Certified. 
       </span>
     </div>
   </div>

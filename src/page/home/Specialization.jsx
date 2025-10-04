@@ -137,9 +137,9 @@ export default function GovernmentExpertise() {
               </ul>
 
               {/* Learn More */}
-              <button className="mt-4 text-orange-600 font-medium text-sm flex items-center gap-1 hover:underline">
+              {/* <button className="mt-4 text-orange-600 font-medium text-sm flex items-center gap-1 hover:underline">
                 Learn More <i className="ri-arrow-right-line"></i>
-              </button>
+              </button> */}
             </div>
           ))}
         </div>

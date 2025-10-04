@@ -9,6 +9,7 @@ import AboutCompany from "@/page/home/About";
 import Projects from "@/page/projects/Projects";
 import GovernmentExpertise from "@/page/home/Specialization";
 import ProjectStats from "@/page/home/ProjectStatisticsBar";
+import GovernmentClients from "@/page/home/Client";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -36,6 +37,16 @@ export default function Home() {
       >
         <AboutCompany/>
       </motion.div>
+
+       <motion.div
+        variants={fadeInUp}
+        initial="hidden"
+        animate="visible"
+      >
+        <GovernmentClients/>
+      </motion.div>
+
+
 
       <motion.div
         variants={fadeInUp}

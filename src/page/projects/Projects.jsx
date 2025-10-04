@@ -283,7 +283,7 @@ const projects = [
                             key={tab}
                             onClick={() => setActiveTab(tab)}
                             className={`px-6 py-2 rounded-full font-medium shadow-sm transition ${activeTab === tab
-                                    ? "bg-orange-600 text-white shadow-md"
+                                    ? "bg-orange-500 text-white shadow-md"
                                     : "bg-white text-gray-600 hover:bg-gray-100"
                                 }`}
                         >
@@ -317,9 +317,9 @@ const projects = [
                                         <i className={`${project.iconClass} text-white text-2xl`}></i>
                                     </div>
                                     {/* Year Badge (instead of year tag) */}
-                                    <span className="absolute bottom-3 left-3 bg-white/80 backdrop-blur-sm border border-gray-200 text-gray-800 text-xs px-3 py-1 rounded-full shadow-sm">
+                                    {/* <span className="absolute bottom-3 left-3 bg-white/80 backdrop-blur-sm border border-gray-200 text-gray-800 text-xs px-3 py-1 rounded-full shadow-sm">
                                         {project.year}
-                                    </span>
+                                    </span> */}
                                     {/* Status Badge */}
                                     <span className="absolute top-3 right-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">
                                         {project.status}
@@ -328,14 +328,14 @@ const projects = [
 
                                 {/* Info */}
                                 <div className="p-4"> 
-                                     <span className=" bg-orange-600 text-white text-xs px-3 py-1 rounded-full">
+                                     <span className=" bg-orange-500 text-white text-xs px-3 py-1 rounded-full">
                                         {project.category}
                                     </span> 
                                     <h3 className="font-semibold text-lg text-gray-800 mt-4 mb-4">
                                         {project.title}
                                     </h3>
                                     <p className="text-sm text-gray-500 flex items-center gap-1 mt-1">
-                                        <i className="ri-map-pin-2-fill text-orange-600"></i>
+                                        <i className="ri-map-pin-2-fill text-orange-500"></i>
                                         {project.location}
                                     </p>
                                     <p className="text-gray-600 text-sm mt-2">{project.desc}</p>

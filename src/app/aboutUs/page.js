@@ -1,6 +1,6 @@
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer"; 
-import Timeline  from "@/components/TimeLine";  
+import GovernmentClients from "@/page/home/Client";
 
 
 export default function AboutUs() {
@@ -225,7 +225,8 @@ export default function AboutUs() {
 
       </div>
     </section>
-    <Timeline/>
+    {/* <Timeline/> */}
+    <GovernmentClients/>
     <Footer/>
     </>
   );

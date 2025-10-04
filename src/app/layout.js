@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Adyaraj Constructions",
+  title: "Adyaraj Developers Pvt. Ltd.",
   description: "Government Construction Projects",
 };
 

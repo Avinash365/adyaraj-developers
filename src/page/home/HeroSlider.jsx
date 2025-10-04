@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import Slider from "react-slick";
 import { motion } from "framer-motion";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const slides = [
   {
@@ -60,7 +60,14 @@ export default function HeroSlider() {
   const [active, setActive] = useState(0);
   const sliderRef = useRef(null);
 
-  // autoplay reduced to 3s
+  // Preload images on client only to prevent stutter
+  useEffect(() => {
+    slides.forEach((slide) => {
+      const img = new window.Image();
+      img.src = slide.image;
+    });
+  }, []);
+
   const autoplaySpeed = 3000;
 
   const settings = {
@@ -107,17 +114,17 @@ export default function HeroSlider() {
       <Slider ref={sliderRef} {...settings}>
         {slides.map((slide, index) => (
           <div key={index} className="relative h-screen w-full overflow-hidden">
-            {/* Background with Zoom Animation */}
+            {/* Background with fade only */}
             <motion.div
-              key={active}
+              key={index}
               className="absolute inset-0 bg-center bg-cover"
               style={{
                 backgroundImage: `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(${slide.image})`,
               }}
-              initial={{ scale: 1.1, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 1.2, opacity: 0 }}
-              transition={{ duration: 1.2, ease: "easeInOut" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
             />
 
             {/* Slide Content */}
@@ -157,7 +164,7 @@ export default function HeroSlider() {
                 <motion.a
                   href="/projects"
                   className="bg-orange-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-orange-600 transition"
-                  whileHover={{ scale: 1.1 }}
+                  whileHover={{ scale: 1.05 }}
                 >
                   View Our Projects
                 </motion.a>

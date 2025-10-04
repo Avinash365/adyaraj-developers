@@ -9,7 +9,7 @@ export default function Careers() {
 
       {/* Hero Section */}
       <section
-        className="w-full h-[400px] flex items-center justify-center relative"
+        className="w-full h-[350px] flex items-center justify-center relative"
         style={{
           backgroundImage: `
             linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
@@ -19,31 +19,32 @@ export default function Careers() {
           backgroundPosition: "center",
         }}
       >
-        <div className="z-10 text-center w-full">
-          <h1 className="text-white text-4xl sm:text-5xl font-extrabold drop-shadow mb-3">
+        <div className="z-10 text-center w-full px-4">
+          <h1 className="text-white text-3xl sm:text-4xl font-bold drop-shadow mb-2">
             Join Our Team
           </h1>
-          <p className="text-white text-lg sm:text-xl font-medium drop-shadow">
+          <p className="text-white text-base sm:text-lg font-medium drop-shadow">
             Build Your Career with Eastern India&apos;s Leading Construction Company
           </p>
         </div>
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 bg-[#fafbfc]">
-        <div className="text-center mb-12">
-          <span className="bg-orange-100 text-orange-600 font-medium px-4 py-1 rounded-full text-sm">
+      <section className="py-14 bg-[#fafbfc]">
+        <div className="text-center mb-10 px-4">
+          <span className="bg-orange-100 text-orange-600 font-medium px-3 py-1 rounded-full text-xs">
             Careers at Adyaraj
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 mt-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mt-3">
             Why Choose <span className="text-orange-600">Adyaraj Developers?</span>
           </h2>
-          <p className="text-gray-600 mt-3 max-w-2xl mx-auto text-base md:text-lg">
-            Join a company that values innovation, excellence, and professional growth. Be part of building India&apos;s infrastructure future.
+          <p className="text-gray-600 mt-2 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+            Join a company that values innovation, excellence, and professional growth.  
+            Be part of building India&apos;s infrastructure future.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
           {[
             {
               icon: "₹",
@@ -78,35 +79,35 @@ export default function Careers() {
           ].map((item, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center transition-transform hover:scale-105 duration-300"
+              className="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center transition-transform hover:scale-105 duration-300"
             >
-              <span className="bg-[#ffe6ca] text-[#E9A663] rounded-xl mb-4 flex items-center justify-center w-12 h-12 text-3xl">
+              <span className="bg-[#ffe6ca] text-[#E9A663] rounded-xl mb-3 flex items-center justify-center w-10 h-10 text-2xl">
                 {item.icon}
               </span>
-              <h3 className="font-semibold text-lg text-[#22223B] mb-2">
+              <h3 className="font-semibold text-base text-[#22223B] mb-1">
                 {item.title}
               </h3>
-              <p className="text-gray-600 text-base">{item.desc}</p>
+              <p className="text-gray-600 text-sm">{item.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Application Process */}
-      <section className="py-16 bg-white">
-        <div className="text-center mb-12">
-          <span className="bg-orange-100 text-orange-600 font-medium px-4 py-1 rounded-full text-sm">
+      <section className="py-14 bg-white">
+        <div className="text-center mb-10 px-4">
+          <span className="bg-orange-100 text-orange-600 font-medium px-3 py-1 rounded-full text-xs">
             Hiring Process
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 mt-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mt-3">
             Simple &amp; Transparent <span className="text-orange-600">Application</span> Steps
           </h2>
-          <p className="text-gray-600 mt-3 max-w-2xl mx-auto text-base md:text-lg">
+          <p className="text-gray-600 mt-2 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
             We believe in a fair and efficient hiring process to connect the right talent with the right opportunity.
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center items-stretch gap-8 max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-center items-stretch gap-6 max-w-6xl mx-auto px-4">
           {[
             {
               step: "01",
@@ -129,14 +130,14 @@ export default function Careers() {
               desc: "Reference checks followed by a formal offer to selected candidates.",
             },
           ].map((step, idx) => (
-            <div key={idx} className="flex-1 text-center px-4">
-              <div className="bg-[#ec6608] text-white rounded-full w-16 h-16 flex items-center justify-center text-xl font-bold mx-auto mb-4 shadow-md">
+            <div key={idx} className="flex-1 text-center px-3">
+              <div className="bg-[#ec6608] text-white rounded-full w-14 h-14 flex items-center justify-center text-lg font-bold mx-auto mb-3 shadow">
                 {step.step}
               </div>
-              <h3 className="text-lg font-semibold text-[#22223B] mb-2">
+              <h3 className="text-base font-semibold text-[#22223B] mb-1">
                 {step.title}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed max-w-xs mx-auto">
+              <p className="text-gray-600 text-xs leading-relaxed max-w-xs mx-auto">
                 {step.desc}
               </p>
             </div>
@@ -145,25 +146,43 @@ export default function Careers() {
       </section>
 
       {/* Call to Action */}
-      <section className="bg-gradient-to-r from-yellow-900 to-orange-400 py-16 px-2">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-white text-3xl md:text-4xl font-extrabold mb-4">
-            Ready to Build Your Future?
+      <section className="bg-gradient-to-r from-yellow-900 to-orange-400 py-16 px-4">
+        <div className="max-w-3xl mx-auto text-center space-y-4">
+          <h2 className="text-white text-xl md:text-2xl font-bold tracking-wide">
+            Build Your Career with Us
           </h2>
-          <p className="text-white text-base md:text-lg mb-7">
-            Join our team and be part of India&apos;s infrastructure development.
+          <p className="text-white text-sm md:text-base leading-relaxed">
+            We are seeking talented professionals to join our team.  
             <br />
-            Send us your resume and let&apos;s discuss your career opportunities.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mt-2">
-            <button className="bg-white text-[#ec6608] font-medium rounded-md px-7 py-3 shadow hover:bg-orange-50 transition border border-white">
-              Send Your Resume
-            </button>
+            Email your resume at{" "}
             <a
-              href="tel:+919334485893"
-              className="border border-white text-white font-medium rounded-md px-7 py-3 hover:bg-white hover:text-[#ec6608] transition shadow"
+              href="mailto:adyaraj.dev@gmail.com"
+              className="underline font-semibold hover:text-yellow-200 transition"
             >
-              Call HR: +91 9334485893
+              adyaraj.dev@gmail.com
+            </a>{" "}
+            or call us at{" "}
+            <a
+              href="tel:+919431050079"
+              className="underline font-semibold hover:text-yellow-200 transition"
+            >
+              +91 9431050079
+            </a>
+            .
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-4">
+            <a
+              href="mailto:adyaraj.dev@gmail.com"
+              className="bg-white text-[#ec6608] font-medium rounded-md px-5 py-2 shadow hover:bg-orange-50 transition border border-white"
+            >
+              Send Your Resume
+            </a>
+            <a
+              href="tel:+919431050079"
+              className="border border-white text-white font-medium rounded-md px-5 py-2 hover:bg-white hover:text-[#ec6608] transition shadow"
+            >
+              Call HR
             </a>
           </div>
         </div>

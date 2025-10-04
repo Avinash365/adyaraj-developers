@@ -1,7 +1,11 @@
 "use client";
 import Image from "next/image";
 
-export default function AboutCompany() {
+export default function AboutCompany() { 
+  const currentYear = new Date().getFullYear();
+  const foundingYear = 2005;
+  const yearsOfExcellence = currentYear - foundingYear;
+
   // ========= CONFIG VARIABLES =========
   const company = {
     badge: "About Our Company",
@@ -13,13 +17,13 @@ export default function AboutCompany() {
       "Since our inception, we have continuously innovated at every stage of development. Our journey has been marked by consistently exceeding customer expectations, building a reputation of trust and delivering true value across diverse public interest projects.",
     button: "Learn More About Us",
     image: "/images/governmentPartner/image.png",
-    badgeYears: "19+",
+    badgeYears: `${yearsOfExcellence}+`,
     badgeText: "Years of Excellence",
   };
 
   const leadership = [
-    { name: "Mr. Jitendra Kumar Roy", role: "Managing Director", color: "text-orange-600" },
-    { name: "Mr. Amrendra Kumar Amar", role: "Co-founder", color: "text-blue-600" },
+    { name: "Mr. Jitendra Kumar Roy", role: "Managing Director", color: "text-orange-600", image: "/" },
+    { name: "Mr. Amrendra Kumar Amar", role: "Co-founder", color: "text-blue-600", image: "/" },
   ];
 
   const stats = [
@@ -50,13 +54,21 @@ export default function AboutCompany() {
           <div className="mt-6 border rounded-xl p-4">
             <h3 className="font-semibold text-lg mb-3 text-black">Leadership</h3>
             {leadership.map((leader, idx) => (
-              <p key={idx} className={`${leader.color} font-medium`}>
-                {leader.name} <span className="text-gray-600 font-normal">– {leader.role}</span>
-              </p>
+              <div className="flex items-center mb-3" key={idx}>
+                <img
+                  src={leader.image}
+                  alt={leader.name}
+                  className="w-12 h-12 rounded-full border-2 border-gray-100 object-cover mr-3"
+                />
+                <div>
+                  <div className="font-bold text-base text-gray-900">{leader.name}</div>
+                  <div className="text-xs text-gray-600">{leader.role}</div>
+                </div>
+              </div>
             ))}
           </div>
 
-          <button className="mt-6 bg-orange-600 hover:bg-orange-700 text-white font-medium rounded-xl px-6 py-3">
+          <button className="mt-6 bg-orange-500 hover:bg-orange-600 cursor-pointer text-white font-medium rounded-xl px-6 py-3">
             {company.button}
           </button>
         </div>
@@ -72,7 +84,7 @@ export default function AboutCompany() {
               height={400}
               className="rounded-2xl shadow-lg w-full h-auto"
             />
-            <div className="absolute -left-6 -bottom-6 bg-orange-600 text-white px-5 py-4 rounded-xl shadow-lg text-center">
+            <div className="absolute -left-6 -bottom-6 bg-orange-500 text-white px-5 py-4 rounded-xl shadow-lg text-center">
               <p className="text-2xl font-bold">{company.badgeYears}</p>
               <p className="text-sm">{company.badgeText}</p>
             </div>

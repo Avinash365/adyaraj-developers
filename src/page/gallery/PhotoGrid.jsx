@@ -9,10 +9,8 @@ const EVENTS_PLAYLIST_ID = 'YOUR_EVENTS_PLAYLIST_ID';
 // ------------------ FilterTabs Component ------------------
 function FilterTabs({ activeFilter, onFilterChange }) {
   const filters = [
-    { id: 'all', label: 'All Projects', emoji: '🏗️' },
+    { id: 'videos', label: 'Awards & Certifications', emoji: '🏆' },
     { id: 'photos', label: 'Photos', emoji: '📸' },
-    { id: 'videos', label: 'Videos', emoji: '🎬' },
-    { id: 'events', label: 'Site Events', emoji: '🛠️' },
   ];
 
   return (
@@ -88,46 +86,40 @@ function PhotoGrid({ activeFilter }) {
   const photos = [
     {
       id: '1',
-      src: 'https://images.unsplash.com/photo-1599792929266-6474c09d5d6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+      src: 'https://images.unsplash.com/photo-1599792929266-6474c09d5d6e',
       alt: 'Construction Site 1',
-      category: 'site',
       type: 'photo',
     },
     {
       id: '2',
-      src: 'https://images.unsplash.com/photo-1600585154340-be6161b89f40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+      src: 'https://images.unsplash.com/photo-1600585154340-be6161b89f40',
       alt: 'Construction Site 2',
-      category: 'site',
       type: 'photo',
     },
     {
       id: '3',
-      src: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+      src: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be',
       alt: 'Construction Machinery',
-      category: 'machinery',
       type: 'photo',
     },
     {
       id: '4',
-      src: 'https://images.unsplash.com/photo-1593642634367-d91a135587b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+      src: 'https://images.unsplash.com/photo-1593642634367-d91a135587b5',
       alt: 'Team Working',
-      category: 'team',
       type: 'photo',
     },
   ];
 
   const getFilteredItems = () => {
     switch (activeFilter) {
-      case 'all':
-        return [...photos, ...videosPlaylist, ...eventsPlaylist];
-      case 'photos':
-        return photos;
       case 'videos':
         return videosPlaylist;
       case 'events':
         return eventsPlaylist;
+      case 'photos':
+        return photos;
       default:
-        return photos.filter((p) => p.category === activeFilter);
+        return [];
     }
   };
 
@@ -136,32 +128,36 @@ function PhotoGrid({ activeFilter }) {
   return (
     <>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredItems.map((item) => (
-            <div
-              key={item.id}
-              className="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
-              onClick={() => setSelectedItem(item)}
-            >
-              <div className="aspect-w-4 aspect-h-3 relative">
-                <img
-                  src={item.src}
-                  alt={item.alt || item.title}
-                  className="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-300"
-                />
-                {item.type === 'video' && (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="bg-black/50 rounded-full p-4">
-                      <div className="w-8 h-8 flex items-center justify-center text-white text-2xl">
-                        ▶️
+        {filteredItems.length === 0 ? (
+          <p className="text-center text-gray-500">No items available.</p>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {filteredItems.map((item) => (
+              <div
+                key={item.id}
+                className="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+                onClick={() => setSelectedItem(item)}
+              >
+                <div className="aspect-w-4 aspect-h-3 relative">
+                  <img
+                    src={item.src}
+                    alt={item.alt || item.title}
+                    className="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                  />
+                  {item.type === 'video' && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="bg-black/50 rounded-full p-4">
+                        <div className="w-8 h-8 flex items-center justify-center text-white text-2xl">
+                          ▶️
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {selectedItem && (
@@ -204,10 +200,10 @@ function PhotoGrid({ activeFilter }) {
 
 // ------------------ Main ConstructionGallery Component ------------------
 export default function ConstructionGallery() {
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activeFilter, setActiveFilter] = useState('videos'); // default to videos
 
   return (
-    <div className='w-full bg-white'>
+    <div className="w-full bg-white">
       <FilterTabs activeFilter={activeFilter} onFilterChange={setActiveFilter} />
       <PhotoGrid activeFilter={activeFilter} />
     </div>
