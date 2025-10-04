@@ -20,11 +20,11 @@ export default function GovernmentClients() {
           Our Government & <span className="text-orange-600">PSU Sector Clients</span>
         </h2>
 
-        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 ">
           {clients.map((client) => (
             <div
               key={client.id}
-              className="flex items-center gap-3  rounded-xl border border-gray-200 shadow-sm bg-gray-50 hover:bg-gray-100 transition p-4"
+              className="flex items-center gap-3 rounded-xl border border-gray-200 shadow-sm bg-gray-50 hover:bg-gray-100 transition p-4"
             >
               <div className="flex items-center justify-center min-w-8 h-8 rounded-full bg-orange-500 text-white font-semibold text-sm">
                 {client.id}
