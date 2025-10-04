@@ -38,10 +38,15 @@ export default function Navbar() {
 
       {/* 🔶 Main Navbar */}
       <div className="backdrop-blur-md bg-white/90">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
           <div className="flex justify-between h-16 items-center">
             {/* Logo + Company Name */}
-            <div className="flex items-center space-x-2">
+           <div className="flex items-center space-x-3">
+              <img
+                src="./logo.png"
+                alt="Adyaraj Developers Logo"
+                className="w-10 h-10 object-contain"
+              />
               <div className="flex flex-col leading-tight">
                 <span className="text-lg font-bold text-gray-800">
                   Adyaraj Developers
@@ -50,7 +55,7 @@ export default function Navbar() {
                   Private Limited
                 </span>
               </div>
-            </div>
+            </div> 
 
             {/* Desktop Links */}
             <div className="hidden md:flex space-x-6">
