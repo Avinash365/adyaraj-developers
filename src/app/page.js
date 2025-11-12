@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
+import NotificationBar from "@/components/notificationBar";
 import HeroSlider from "@/page/home/HeroSlider";
 import LatestNews from "@/page/home/LatestNews";
 import AboutCompany from "@/page/home/About"; 
-import Projects from "@/page/projects/Projects";
 import GovernmentExpertise from "@/page/home/Specialization";
 import ProjectStats from "@/page/home/ProjectStatisticsBar";
 import GovernmentClients from "@/page/home/Client";
@@ -35,25 +35,23 @@ export default function Home() {
         initial="hidden"
         animate="visible"
       >
-        <AboutCompany/>
+        <NotificationBar/>
       </motion.div>
-
-       <motion.div
-        variants={fadeInUp}
-        initial="hidden"
-        animate="visible"
-      >
-        <GovernmentClients/>
-      </motion.div>
-
-
 
       <motion.div
         variants={fadeInUp}
         initial="hidden"
         animate="visible"
       >
-        <Projects/>
+        <AboutCompany/>
+      </motion.div>
+
+      <motion.div
+        variants={fadeInUp}
+        initial="hidden"
+        animate="visible"
+      >
+        <GovernmentClients/>
       </motion.div>
 
       <motion.div
@@ -73,6 +71,7 @@ export default function Home() {
       </motion.div>
 
       <motion.div
+        id="latest-news" 
         variants={fadeInUp}
         initial="hidden"
         animate="visible"

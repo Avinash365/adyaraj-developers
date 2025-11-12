@@ -25,7 +25,7 @@ export default function GovernmentExpertise() {
         "Administrative Buildings",
         "Government Offices",
         "Public Service Centers",
-        "Municipal Facilities",
+        "Residential Officer's Quaters",
       ],
     },
     {
@@ -34,7 +34,7 @@ export default function GovernmentExpertise() {
       title: "Public Infrastructure",
       desc: "Large-scale government infrastructure projects including highways, bridges, and public transportation systems.",
       points: [
-        "Highway Construction",
+        "ROB",
         "Public Bridges",
         "Government Roads",
         "Urban Infrastructure",
@@ -79,13 +79,13 @@ export default function GovernmentExpertise() {
     {
       id: 6,
       icon: iconMap.park,
-      title: "Landscaping & Parks",
-      desc: "Beautiful park development with modern sprinkler systems and sustainable landscaping solutions.",
+      title: "Tourism Development",
+      desc: "Sustainable tourism projects with beautiful lakefronts, eco-parks, and modern recreational infrastructure.",
       points: [
-        "Park Development",
-        "Sprinkler Systems",
-        "Landscape Design",
-        "Environmental Solutions",
+        "Lakefront Development",
+        "Eco-Tourism Projects",
+        "Recreational Facilities",
+        "Cultural & Heritage Revitalization",
       ],
     },
   ];

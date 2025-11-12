@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
 import Projects from "@/page/projects/Projects";
-import LatestNews from "@/page/home/LatestNews"; 
 import GalleryHero from "@/page/projects/HeroSection";
 
 
@@ -26,7 +25,6 @@ export default function Home() {
             <GalleryHero/>
         </motion.div>
     
-
       <motion.div
         variants={fadeInUp}
         initial="hidden"
@@ -36,15 +34,6 @@ export default function Home() {
         <Projects/>
       </motion.div>
 
-    
-      <motion.div
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <LatestNews/>
-      </motion.div>
       <Footer/>
     </div>
   );

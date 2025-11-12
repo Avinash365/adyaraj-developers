@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link"; // ✅ Added import for navigation
 import MobileMenu from "./MobileMenu";
 
 export default function Navbar() {
@@ -20,64 +21,66 @@ export default function Navbar() {
     <nav className="fixed w-full z-50 shadow-md">
       {/* 🔶 Top Orange Strip */}
       <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white text-[10px] sm:text-sm font-medium">
-  <div className="max-w-7xl mx-auto flex justify-center px-2 py-1">
-    <div className="flex gap-3 sm:gap-6 text-center">
-      <span className="flex items-center gap-1 text-[6px] md:text-[12px]">
-        <i className="ri-government-line"></i> GOVERNMENT CONTRACTS EXCLUSIVELY
-      </span>
-      <span className="flex items-center gap-1 text-[6px] md:text-[12px]">
-        <i className="ri-shield-check-line"></i> CLASS A LICENSED
-      </span>
-      <span className="flex items-center gap-1 text-[6px] md:text-[12px]">
-        <i className="ri-file-list-3-line"></i> ISO 9001:2015 & 45001:2018 Certified. 
-      </span>
-    </div>
-  </div>
-</div>
-
+        <div className="max-w-7xl mx-auto flex justify-center px-2 py-1">
+          <div className="flex gap-3 sm:gap-6 text-center">
+            <span className="flex items-center gap-1 text-[6px] md:text-[12px]">
+              <i className="ri-government-line"></i> GOVERNMENT CONTRACTS
+              EXCLUSIVELY
+            </span>
+            <span className="flex items-center gap-1 text-[6px] md:text-[12px]">
+              <i className="ri-shield-check-line"></i> CLASS A LICENSED
+            </span>
+            <span className="flex items-center gap-1 text-[6px] md:text-[12px]">
+              <i className="ri-file-list-3-line"></i> ISO 9001:2015 & 45001:2018
+              Certified.
+            </span>
+          </div>
+        </div>
+      </div>
 
       {/* 🔶 Main Navbar */}
       <div className="backdrop-blur-md bg-white/90">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
           <div className="flex justify-between h-16 items-center">
-            {/* Logo + Company Name */}
-           <div className="flex items-center space-x-3">
+            {/* ✅ Logo + Company Name (Clickable to Home) */}
+            <Link
+              href="/"
+              className="flex items-center space-x-3 cursor-pointer group"
+            >
               <img
-                src="./logo.png"
+                src="/logo.png"
                 alt="Adyaraj Developers Logo"
-                className="w-10 h-10 object-contain"
+                className="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-110"
               />
               <div className="flex flex-col leading-tight">
-                <span className="text-lg font-bold text-gray-800">
+                <span className="text-lg font-bold text-gray-800 group-hover:text-orange-600 transition-colors duration-300">
                   Adyaraj Developers
                 </span>
-                <span className="text-xs text-gray-500">
-                  Private Limited
-                </span>
+                <span className="text-xs text-gray-500">Private Limited</span>
               </div>
-            </div> 
+            </Link>
 
             {/* Desktop Links */}
             <div className="hidden md:flex space-x-6">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
                   href={link.href}
                   className="flex items-center text-gray-700 hover:text-orange-600 transition-colors duration-300"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
             </div>
 
             {/* Get Quote Button */}
             <div className="hidden md:block">
-              <a
+              <Link
                 href="/quote"
                 className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-md shadow-md transition"
               >
                 <i className="ri-file-edit-line mr-1"></i> Tender Info
-              </a>
+              </Link>
             </div>
 
             {/* Mobile Hamburger */}

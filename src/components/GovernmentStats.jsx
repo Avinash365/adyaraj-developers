@@ -8,12 +8,12 @@ export default function GovernmentStats() {
       subtext: "Government Projects Only",
     },
     {
-      value: "50+",
+      value: "55+",
       label: "Projects Completed",
       subtext: "All Government Departments",
     },
     {
-      value: "15+",
+      value: "10+",
       label: "Active Contracts",
       subtext: "Currently Executing",
     },

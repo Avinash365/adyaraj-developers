@@ -1,5 +1,6 @@
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import ApplicationForm from "@/page/careers/ApplicationForm";
 
 export default function Careers() {
   return (
@@ -145,49 +146,7 @@ export default function Careers() {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="bg-gradient-to-r from-yellow-900 to-orange-400 py-16 px-4">
-        <div className="max-w-3xl mx-auto text-center space-y-4">
-          <h2 className="text-white text-xl md:text-2xl font-bold tracking-wide">
-            Build Your Career with Us
-          </h2>
-          <p className="text-white text-sm md:text-base leading-relaxed">
-            We are seeking talented professionals to join our team.  
-            <br />
-            Email your resume at{" "}
-            <a
-              href="mailto:adyaraj.dev@gmail.com"
-              className="underline font-semibold hover:text-yellow-200 transition"
-            >
-              adyaraj.dev@gmail.com
-            </a>{" "}
-            or call us at{" "}
-            <a
-              href="tel:+919431050079"
-              className="underline font-semibold hover:text-yellow-200 transition"
-            >
-              +91 9431050079
-            </a>
-            .
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-4">
-            <a
-              href="mailto:adyaraj.dev@gmail.com"
-              className="bg-white text-[#ec6608] font-medium rounded-md px-5 py-2 shadow hover:bg-orange-50 transition border border-white"
-            >
-              Send Your Resume
-            </a>
-            <a
-              href="tel:+919431050079"
-              className="border border-white text-white font-medium rounded-md px-5 py-2 hover:bg-white hover:text-[#ec6608] transition shadow"
-            >
-              Call HR
-            </a>
-          </div>
-        </div>
-      </section>
-
+      <ApplicationForm />
       <Footer />
     </>
   );

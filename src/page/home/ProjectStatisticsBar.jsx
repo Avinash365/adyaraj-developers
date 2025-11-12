@@ -4,9 +4,9 @@ import React from "react";
 
 export default function ProjectStats() {
   const stats = [
-    { id: 1, value: "100+", label: "Projects Completed", color: "text-orange-600" },
-    { id: 2, value: "₹206.57Cr", label: "Annual Turnover", color: "text-blue-600" },
-    { id: 3, value: "19+", label: "Years Experience", color: "text-yellow-500" },
+    { id: 1, value: "55+", label: "Projects Completed", color: "text-orange-600" },
+    { id: 2, value: "₹255.33 Cr", label: "Annual Turnover", color: "text-blue-600" },
+    { id: 3, value: "20+", label: "Years Experience", color: "text-yellow-500" },
     { id: 4, value: "100%", label: "Client Satisfaction", color: "text-orange-600" },
   ];
 

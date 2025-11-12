@@ -4,15 +4,16 @@ import Link from 'next/link';
 
 export default function GalleryHero() {
   return (
-    <div className="relative h-screen bg-gradient-to-br from-orange-500 via-yellow-400 to-orange-600 overflow-hidden">
+    <div className="relative h-screen overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img 
-          src="/images/gallery/1.jpg"
-          alt="Construction Site Gallery"
-          className="w-full h-full object-cover object-top"
+          src="/images/other/6.jpg"
+          alt="Construction Projects Gallery"
+          className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-900/80 via-yellow-900/60 to-transparent"></div>
+        {/* Dark overlay for text contrast */}
+        <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
       {/* Hero Content */}
@@ -22,21 +23,21 @@ export default function GalleryHero() {
             Our <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">Construction Projects</span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl mb-8 text-yellow-100 max-w-2xl mx-auto">
-            Explore the progress and innovation in our construction projects. From residential complexes to commercial landmarks, witness quality and excellence in action!
+            Discover our portfolio of successful construction projects that reflect our commitment to quality, innovation, and excellence in every structure we build.
           </p>
           
           {/* Stats */}
           <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-2xl mx-auto mb-12">
             <div className="text-center">
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-yellow-400 mb-2">50+</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-yellow-400 mb-2">55+</div>
               <div className="text-xs sm:text-sm text-yellow-200">Projects Completed</div>
             </div>
             <div className="text-center">
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-orange-400 mb-2">20+</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-orange-400 mb-2">10+</div>
               <div className="text-xs sm:text-sm text-yellow-200">Active Sites</div>
             </div>
             <div className="text-center">
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-red-400 mb-2">10</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-red-400 mb-2">20+</div>
               <div className="text-xs sm:text-sm text-yellow-200">Years of Experience</div>
             </div>
           </div>
@@ -55,7 +56,7 @@ export default function GalleryHero() {
       {/* Floating Elements */}
       <div className="absolute top-20 left-20 w-10 h-10 sm:w-16 sm:h-16 bg-yellow-400 rounded-full opacity-20 animate-bounce"></div>
       <div className="absolute top-40 right-32 w-8 h-8 sm:w-12 sm:h-12 bg-orange-400 rounded-full opacity-30 animate-pulse"></div>
-      <div className="absolute bottom-32 left-32 w-14 h-14 sm:w-20 sm:h-20 bg-red-400 rounded-full opacity-20 animate-bounce" style={{animationDelay: '1s'}}></div>
+      <div className="absolute bottom-32 left-32 w-14 h-14 sm:w-20 sm:h-20 bg-red-400 rounded-full opacity-20 animate-bounce" style={{ animationDelay: '1s' }}></div>
     </div>
   );
 }

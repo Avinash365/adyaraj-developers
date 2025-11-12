@@ -9,12 +9,15 @@ const clients = [
   { id: 6, name: "National Project Construction Corporation Limited" },
   { id: 7, name: "Bihar State Building Construction Corporation Limited" },
   { id: 8, name: "Bihar Medical Services & Infrastructure Corporation Limited" },
-  { id: 9, name: "Bihar State Educational Infrastructure Development Corporation" },
+  { id: 9, name: "Bihar State Educational Infrastructure Development Corporation Limited" },
+  { id: 10, name: "Bihar State Tourism Development Corporation Limited" },
+  { id: 11, name: "Central Public Works Department [CPWD]" },
+  { id: 12, name: "Publc Health Engineering Department [PHED]" }
 ];
 
 export default function GovernmentClients() {
   return (
-    <section className="py-12 bg-white">
+    <section className="py-12 bg-white-100">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-black text-center mb-10">
           Our Government & <span className="text-orange-600">PSU Sector Clients</span>
