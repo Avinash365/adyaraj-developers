@@ -2,8 +2,8 @@
 
 import Head from "next/head";
 import Navbar from "@/components/navbar/Navbar";
-import ContactUS from "@/page/contactUS/contact";
 import Footer from "@/components/footer/Footer";
+import ContactUS from "../../page/contactUs/contact"
 
 export default function ContactPage() {
   return (
