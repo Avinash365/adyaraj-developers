@@ -77,7 +77,7 @@ export default function AboutCompany() {
     { year: "2021-22", turnover: 73.52 },
     { year: "2022-23", turnover: 105.95 },
     { year: "2023-24", turnover: 206.57 },
-    { year: "2024-25", turnover: 254.34 }
+    { year: "2024-25", turnover: 255.33 }
   ];
 
   // ===== Animation setup =====

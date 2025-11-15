@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 export default function ApplicationForm() {
 
-  const ADYARAJ_CV_UPLOAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxbTQ9F40oXisO9vss1mzZe2e02S5nObLJCFBLjvFOmwurh2JB_xfFYpTjVTmgOyrcprw/exec';
+  const ADYARAJ_CV_UPLOAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxrxI0gtgpGhY6cPvR8k8aPdL3fgeD6et978Jgc2XL9wFm1fh2kzDF-d4p3spxqAqbd-A/exec';
 
   const [formData, setFormData] = useState({
     name: '',
